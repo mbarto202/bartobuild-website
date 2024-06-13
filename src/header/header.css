@@ -1,0 +1,52 @@
+header {
+    height: 100vh;
+    padding-top: 10rem;
+    overflow: hidden;
+}
+
+.header_container {
+    text-align: center;
+    height: 100;
+    position: relative;
+}
+
+.name {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 40vh
+}
+
+/* Scroll Down */
+.scroll_down {
+    position: absolute;
+    right: -2.3rem;
+    bottom: 5rem;
+    transform: rotate(90deg);
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.title {
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1024px) {
+    header{
+        height: 68vh;
+    }
+}
+
+/* Small Devices */
+@media screen and (max-width: 600px) {
+    header {
+        height: 100vh;
+    }
+
+    .header_socials,
+    .scroll_down {
+        display: none;
+    }
+}
