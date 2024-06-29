@@ -8,7 +8,8 @@ export const Header = () => {
       <div className="container header_container">
         <div className='titleBg'> 
           <h1 className='name'>Michael Barto</h1>
-          <h5 className="title">Title</h5>
+          <h5 className="Fitness Coach//add book now button below"></h5>
+          
         </div>
 
         <a href="#contact" className='scroll_down'>Scroll Down</a>
