@@ -1,82 +1,106 @@
 header {
-    height: 100vh;
-    padding-top: 10rem;
-    overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #7a2d2d, #2c2c6c);
+  overflow: hidden;
 }
 
 .header_container {
-    text-align: center;
-    height: 100;
-    position: relative;
+  position: relative;
 }
 
 .name {
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 40vh
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
-/* Scroll Down */
+.title {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+}
+
 .scroll_down {
-    position: absolute;
-    right: -2.3rem;
-    bottom: 5rem;
-    transform: rotate(90deg);
-    font-weight: 300;
-    font-size: 0.9rem;
-    color: white;
+  position: absolute;
+  right: -2rem;
+  bottom: 4rem;
+  transform: rotate(90deg);
+  font-size: 0.9rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.scroll_down:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Header Socials */
 .header_socials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    position: absolute;
-    left: 0;
-    bottom: 3rem;
+  position: absolute;
+  left: 1rem;
+  bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.header_socials a{
-    color: white;
+.header_socials a {
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.header_socials a:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .header_socials::after {
-    content: '';
-    width: 1px;
-    height: 2rem;
-    background-color: white;
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background-color: white;
 }
 
-.title {
-    font-size: 0.9rem;
-}
-
-.cta a:hover{
-    border-color: white;
-    
-    background-color: rgba(0, 0, 0, .5);
-    backdrop-filter: blur(15px);
-    border-radius: 0.5rem;
-}
-
+/* Responsive Adjustments */
 @media screen and (max-width: 1024px) {
-    header{
-        height: 68vh;
-    }
+  header {
+    height: 80vh;
+    padding-top: 5rem;
+  }
+
+  .scroll_down,
+  .header_socials {
+    display: none;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
 }
 
-/* Small Devices */
 @media screen and (max-width: 600px) {
-    header {
-        height: 100vh;
-    }
+  header {
+    height: 100vh;
+    padding-top: 3rem;
+  }
 
-    .header_socials,
-    .scroll_down {
-        display: none;
-    }
+  .name {
+    font-size: 1.8rem;
+  }
+
+  .title {
+    font-size: 0.9rem;
+  }
 }
