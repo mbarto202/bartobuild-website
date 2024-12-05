@@ -1,54 +1,79 @@
 footer {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 3rem 0;
-    text-align: center;
-    font-size: 0.9rem;
-    margin-top: 7rem;
-    border-top: solid 3px white;
+  background: linear-gradient(
+    135deg,
+    #7a2d2d,
+    #1c1c1c
+  ); /* Red-to-black gradient */
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: solid 3px rgba(255, 255, 255, 0.2); /* Subtle border */
+  color: var(--color-white);
 }
 
 footer a {
-    color: rgb(247, 108, 161);
+  color: var(--color-white); /* Default link color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: rgb(247, 108, 161); /* Accent hover color */
 }
 
 .footerLogo {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 2rem;
-    display: inline-block;
-    color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .permalinks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin: 0 auto 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.permalinks li {
+  list-style: none;
+}
+
+.permalinks a {
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .footerSocials {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .footerSocials a {
-    background: rgba(0, 0, 0, 0.5);
-    border: solid 1px white;
-    color: var(--color-white);
-    padding: 0.8rem;
-    border-radius: 0.7rem;
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .footerSocials a:hover {
-    background: white;
-    color: black;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
 }
 
 .footerCopyright {
-    margin-bottom: 4rem;
-    color: rgb(247, 108, 161);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
 }
