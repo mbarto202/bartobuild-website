@@ -1,0 +1,19 @@
+.about-section {
+    padding: 2rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-text {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  
