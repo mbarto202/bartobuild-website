@@ -1,10 +1,18 @@
+.about-section {
+  padding: 3rem 1rem; /* Adjust padding for better spacing */
+  text-align: center;
+  background: linear-gradient(180deg, #2a2a2a, #1c1c1c); /* Neutral gradient */
+  color: white;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+}
+
 .about-content {
   display: flex;
-  align-items: center;
-  gap: 2rem;
   flex-wrap: wrap;
-  text-align: left;
+  gap: 2rem;
   justify-content: center;
+  align-items: center;
+  text-align: left;
 }
 
 .about-image {
@@ -15,4 +23,65 @@
 
 .about-text {
   max-width: 600px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Remove bottom margin to fix spacing issues */
+.about-section:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Adjust padding and margin for better spacing on medium screens */
+@media screen and (max-width: 1024px) {
+  .about-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Adjust spacing on small screens */
+@media screen and (max-width: 600px) {
+  .about-section {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .stats {
+    gap: 1rem;
+  }
 }
