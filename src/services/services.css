@@ -5,10 +5,10 @@
     180deg,
     #2a2a2a,
     #1c1c1c
-  ); /* Neutral gradient like About */
+  ); /* Matches About section */
   color: white;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle bottom border */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .section-title {
@@ -21,12 +21,20 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+.services-intro {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .services-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .service-item {
@@ -36,6 +44,7 @@
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
 }
 
 .service-item:hover {
@@ -66,6 +75,10 @@
     font-size: 2rem;
   }
 
+  .services-intro {
+    font-size: 0.95rem;
+  }
+
   .service-title {
     font-size: 1.3rem;
   }
@@ -82,6 +95,10 @@
 
   .section-title {
     font-size: 1.8rem;
+  }
+
+  .services-intro {
+    font-size: 0.9rem;
   }
 
   .service-title {

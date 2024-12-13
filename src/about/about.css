@@ -1,39 +1,14 @@
-.about-section {
-  padding: 3rem 1rem; /* Adjust padding for better spacing */
+.services-section {
+  padding: 3rem 1rem;
   text-align: center;
-  background: linear-gradient(180deg, #2a2a2a, #1c1c1c); /* Neutral gradient */
+  background: linear-gradient(
+    180deg,
+    #2a2a2a,
+    #1c1c1c
+  ); /* Matches About section */
   color: white;
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
-}
-
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-}
-
-.about-image {
-  max-width: 300px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-.about-text {
-  max-width: 600px;
-}
-
-.stats {
-  display: flex;
-  justify-content: space-around;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.stats div {
-  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .section-title {
@@ -46,30 +21,75 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Remove bottom margin to fix spacing issues */
-.about-section:last-of-type {
-  margin-bottom: 0;
+.services-intro {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* Adjust padding and margin for better spacing on medium screens */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.service-item {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+/* Responsive Adjustments */
 @media screen and (max-width: 1024px) {
-  .about-section {
+  .services-section {
     padding: 2.5rem 1rem;
   }
 
-  .about-content {
-    flex-direction: column;
+  .section-title {
+    font-size: 2rem;
   }
 
-  .stats {
-    flex-direction: column;
-    gap: 1rem;
+  .services-intro {
+    font-size: 0.95rem;
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+  }
+
+  .service-description {
+    font-size: 0.95rem;
   }
 }
 
-/* Adjust spacing on small screens */
 @media screen and (max-width: 600px) {
-  .about-section {
+  .services-section {
     padding: 2rem 1rem;
   }
 
@@ -77,11 +97,15 @@
     font-size: 1.8rem;
   }
 
-  .about-text {
-    max-width: 100%;
+  .services-intro {
+    font-size: 0.9rem;
   }
 
-  .stats {
-    gap: 1rem;
+  .service-title {
+    font-size: 1.2rem;
+  }
+
+  .service-description {
+    font-size: 0.9rem;
   }
 }
