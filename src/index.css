@@ -66,7 +66,6 @@ section > h2, section > h5 {
 section > h2 {
     color: white;
     backdrop-filter: blur(8px);
-    background-color: rgba(0, 0, 0, .5);
     margin-bottom: 3rem;
     border: 3px solid;
     border-top: white;
