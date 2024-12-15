@@ -71,14 +71,15 @@ header {
 }
 
 .header_socials a {
-  font-size: 1.5rem;
   color: white;
+  font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .header_socials a:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: #e4405f;
 }
+
 
 .header_socials::after {
   content: "";
