@@ -6,8 +6,8 @@ header {
   text-align: center;
   background: linear-gradient(
     135deg,
-    #7a2d2d,
-    #1c1c1c
+    #dc0101,
+    #161616
   ); /* Red-to-black gradient */
   padding-top: 5rem;
   position: relative;
@@ -79,7 +79,6 @@ header {
 .header_socials a:hover {
   color: #e4405f;
 }
-
 
 .header_socials::after {
   content: "";
