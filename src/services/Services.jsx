@@ -1,5 +1,6 @@
 import React from "react";
 import "./services.css";
+import { FaDumbbell, FaClipboardList, FaAppleAlt } from "react-icons/fa";
 
 const Services = () => {
   return (
@@ -12,12 +13,14 @@ const Services = () => {
       </p>
       <div className="services-container">
         <div className="service-item">
+          <FaDumbbell className="service-icon" />
           <h3 className="service-title">Personal Training</h3>
           <p className="service-description">
             One-on-one coaching sessions designed to maximize your potential.
           </p>
         </div>
         <div className="service-item">
+          <FaClipboardList className="service-icon" />
           <h3 className="service-title">Custom Workout Plans</h3>
           <p className="service-description">
             A personalized workout program to suit your unique fitness level and
@@ -25,6 +28,7 @@ const Services = () => {
           </p>
         </div>
         <div className="service-item">
+          <FaAppleAlt className="service-icon" />
           <h3 className="service-title">Nutrition Guidance</h3>
           <p className="service-description">
             Expert advice on meal planning and nutrition to fuel your goals.
