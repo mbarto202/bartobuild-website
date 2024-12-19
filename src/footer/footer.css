@@ -1,24 +1,20 @@
 footer {
-  background: linear-gradient(
-    135deg,
-    #dc0101,
-    #161616
-  ); /* Red-to-black gradient */
+  background: linear-gradient(135deg, #dc0101, #161616);
   padding: 2rem 0;
   text-align: center;
   font-size: 0.9rem;
-  border-top: solid 3px rgba(255, 255, 255, 0.2); /* Subtle border */
+  border-top: solid 3px rgba(255, 255, 255, 0.2);
   color: var(--color-white);
 }
 
 footer a {
-  color: var(--color-white); /* Default link color */
+  color: var(--color-white);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: rgb(247, 108, 161); /* Accent hover color */
+  color: rgb(247, 108, 161);
 }
 
 .footerLogo {
