@@ -9,7 +9,12 @@ const Header = () => {
         <div className="titleBg">
           <h1 className="name">Michael Barto</h1>
           <h5 className="title">Your Personal Fitness Coach</h5>
-          <a href="#contact" className="btn btn-primary">
+          <a
+            className="btn btn-primary"
+            href="https://calendly.com/your-calendly-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Book a Call
           </a>
         </div>
