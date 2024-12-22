@@ -11,7 +11,7 @@ const Header = () => {
           <h5 className="title">Your Personal Fitness Coach</h5>
           <a
             className="btn btn-primary"
-            href="https://calendly.com/your-calendly-link"
+            href="https://calendly.com/michael-d-barto/30min"
             target="_blank"
             rel="noopener noreferrer"
           >
