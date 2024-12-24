@@ -133,6 +133,35 @@ img {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Shared Section Title Styles */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  color: var(--color-accent); /* Consistent with the site's theme */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-accent);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Adjustments for Section Titles */
+@media screen and (max-width: 1024px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
 /* Responsive Adjustments for Medium Devices */
 @media screen and (max-width: 1024px) {
   .container {

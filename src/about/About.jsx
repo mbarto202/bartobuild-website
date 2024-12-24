@@ -11,13 +11,12 @@ const About = () => {
           className="about-image"
         />
         <div className="about-text">
-          <h2>Meet Your Coach</h2>
+          <h2 className="section-title">About Me</h2>
           <p>
             Welcome! I’m Michael Barto, a fitness coach passionate about helping
             you achieve your dream physique. With years of experience in
-            bodybuilding and personal training, I specialize in creating
-            personalized fitness plans tailored to your goals. Let’s build the
-            best version of you—one step at a time!
+            bodybuilding and personal training, I specialize in personalized
+            fitness plans tailored to your goals.
           </p>
         </div>
       </div>

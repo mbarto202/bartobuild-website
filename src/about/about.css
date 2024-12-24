@@ -1,6 +1,7 @@
 .about-section {
-  padding: 4rem 1.5rem; /* Adjusted padding for spacing */
-  background: linear-gradient(135deg, #2a2a2a, #1c1c1c); /* Dark gradient */
+  /* Section-specific styling */
+  padding: 4rem 1.5rem;
+  background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
   color: white;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
