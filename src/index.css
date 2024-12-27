@@ -68,7 +68,6 @@ h2 {
 }
 
 section {
-  margin-top: 1rem;
   padding: 3rem 1rem;
 }
 
@@ -125,7 +124,7 @@ img {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 1.5px;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
   letter-spacing: 2px;
   color: rgba(255, 255, 255, 0.85); /* Soft white for elegance */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */

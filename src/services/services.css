@@ -1,7 +1,11 @@
 .services-section {
   padding: 3rem 1rem;
   text-align: center;
-  background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
+  background: linear-gradient(
+    135deg,
+    #2a2a2a,
+    #1c1c1c
+  ); /* Cohesive dark gradient */
   color: white;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -30,7 +34,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 300px;
-  min-height: 240px;
+  min-height: 260px;
 }
 
 .service-item:hover {
@@ -63,14 +67,6 @@
     padding: 2.5rem 1rem;
   }
 
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .services-intro {
-    font-size: 0.95rem;
-  }
-
   .service-title {
     font-size: 1.3rem;
   }
@@ -83,14 +79,6 @@
 @media screen and (max-width: 600px) {
   .services-section {
     padding: 2rem 1rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .services-intro {
-    font-size: 0.9rem;
   }
 
   .service-title {
