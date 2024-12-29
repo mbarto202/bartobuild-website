@@ -1,6 +1,6 @@
 import React from "react";
 import "./services.css";
-import { FaDumbbell, FaCalendarAlt, FaComments } from "react-icons/fa";
+import { FaDumbbell, FaCalendarAlt, FaRegHandshake } from "react-icons/fa";
 
 const Services = () => {
   return (
@@ -16,24 +16,27 @@ const Services = () => {
           <FaDumbbell className="service-icon" />
           <h3 className="service-title">One-on-One Coaching</h3>
           <p className="service-description">
-            Personalized 60-minute sessions, available in-person or via Zoom,
-            focusing on bodybuilding or weight loss.
+            Personalized 60-minute sessions, only available in-person, focusing
+            on bodybuilding or weight loss.
           </p>
         </div>
         <div className="service-item">
           <FaCalendarAlt className="service-icon" />
-          <h3 className="service-title">Monthly Coaching</h3>
+          <h3 className="service-title">Premium Monthly Coaching</h3>
           <p className="service-description">
-            Commit to a month of weekly training sessions and calls, providing
-            continuous support and progress tracking.
+            Fully commit to your fitness journey with weekly in-person training
+            sessions, tailored workouts, Zoom check-ins, and nutritional
+            guidance. This plan is designed for those ready to achieve lasting
+            results.
           </p>
         </div>
+
         <div className="service-item">
-          <FaComments className="service-icon" />
+          <FaRegHandshake className="service-icon" />
           <h3 className="service-title">Free Consultation</h3>
           <p className="service-description">
-            Book a free consultation to discuss your fitness goals and how I can
-            help you achieve them.
+            A 30-minute introductory session to discuss your goals, fitness
+            history, and expectations.
           </p>
         </div>
       </div>
