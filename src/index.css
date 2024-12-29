@@ -14,10 +14,8 @@
   --color-white: #fff;
   --color-light: rgba(255, 255, 255, 0.8);
   --color-dark: #1c1c1c;
-  --color-accent: #f71900; /* Salmon color for highlights */
-
+  --color-accent: #f71900;
   --transition: all 400ms ease;
-
   --container-width-lg: 75%;
   --container-width-md: 86%;
   --container-width-sm: 90%;
@@ -37,12 +35,11 @@ body {
     180deg,
     #1c1c1c,
     #2a2a2a
-  ); /* Dark gradient for cohesion */
+  ); 
   color: var(--color-white);
   line-height: 1.7;
 }
 
-/* General container styling */
 .container {
   width: var(--container-width-lg);
   margin: 0 auto;
@@ -75,7 +72,6 @@ section {
   color: var(--color-light);
 }
 
-/* Links */
 a {
   color: var(--color-accent);
   transition: var(--transition);
@@ -85,7 +81,6 @@ a:hover {
   color: var(--color-white);
 }
 
-/* Buttons */
 .btn {
   width: max-content;
   display: inline-block;
