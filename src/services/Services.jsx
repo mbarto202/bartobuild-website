@@ -38,6 +38,9 @@ const Services = () => {
             A 30-minute introductory session to discuss your goals, fitness
             history, and expectations.
           </p>
+          <a href="https://calendly.com/your-link" className="btn btn-primary">
+            Schedule a Free Consultation
+          </a>
         </div>
       </div>
     </section>
