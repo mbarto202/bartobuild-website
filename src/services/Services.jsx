@@ -29,6 +29,12 @@ const Services = () => {
             guidance. This plan is designed for those ready to achieve lasting
             results.
           </p>
+          <a
+            href="https://calendly.com/your-link-premium" //fix link
+            className="btn btn-primary"
+          >
+            Start Coaching
+          </a>
         </div>
 
         <div className="service-item">
