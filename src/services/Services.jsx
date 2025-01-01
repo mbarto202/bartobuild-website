@@ -39,7 +39,7 @@ const Services = () => {
             history, and expectations.
           </p>
           <a href="https://calendly.com/your-link" className="btn btn-primary">
-            Schedule a Free Consultation
+            Book a Call
           </a>
         </div>
       </div>
