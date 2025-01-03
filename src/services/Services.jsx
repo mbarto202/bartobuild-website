@@ -19,6 +19,9 @@ const Services = () => {
             Personalized 60-minute sessions, only available in-person, focusing
             on bodybuilding or weight loss.
           </p>
+          <a href="https://calendly.com/your-link" className="btn btn-primary">
+            Book a Session
+          </a>
         </div>
         <div className="service-item">
           <FaCalendarAlt className="service-icon" />
