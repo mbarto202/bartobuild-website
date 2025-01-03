@@ -1,11 +1,7 @@
 .services-section {
   padding: 3rem 1rem;
   text-align: center;
-  background: linear-gradient(
-    135deg,
-    #2a2a2a,
-    #1c1c1c
-  );
+  background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
   color: white;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
