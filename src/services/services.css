@@ -31,17 +31,27 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 300px;
   min-height: 260px;
-}
-
-.service-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .service-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-primary {
+  margin-top: auto;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
 }
 
 .service-title {
