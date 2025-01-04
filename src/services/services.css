@@ -47,6 +47,8 @@
   margin-top: auto;
   padding: 0.8rem 1.2rem;
   text-align: center;
+  position: relative;
+  top: 10px;
 }
 
 .service-item:hover {
