@@ -29,8 +29,7 @@ const Services = () => {
           <p className="service-description">
             Fully commit to your fitness journey with weekly in-person training
             sessions, tailored workouts, Zoom check-ins, and nutritional
-            guidance. This plan is designed for those ready to achieve lasting
-            results.
+            guidance.
           </p>
           <a
             href="https://calendly.com/your-link-premium" //fix link
