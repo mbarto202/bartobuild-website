@@ -61,6 +61,11 @@
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.9);
   text-transform: uppercase;
+  min-height: 5rem; /* Ensures consistent height for titles */
+  display: flex;
+  align-items: center; /* Centers single-line titles */
+  justify-content: center;
+  text-align: center; /* Keeps text centered */
 }
 
 .service-description {
