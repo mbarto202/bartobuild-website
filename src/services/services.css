@@ -1,11 +1,7 @@
 .services-section {
   padding: 3rem 1rem;
   text-align: center;
-  background: linear-gradient(
-    135deg,
-    #2a2a2a,
-    #1c1c1c
-  );
+  background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
   color: white;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -35,11 +31,10 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 300px;
   min-height: 260px;
-}
-
-.service-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .service-icon {
@@ -48,11 +43,29 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+.btn-primary {
+  margin-top: auto;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  position: relative;
+  top: 10px;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
 .service-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.9);
   text-transform: uppercase;
+  min-height: 5rem; /* Ensures consistent height for titles */
+  display: flex;
+  align-items: center; /* Centers single-line titles */
+  justify-content: center;
+  text-align: center; /* Keeps text centered */
 }
 
 .service-description {
