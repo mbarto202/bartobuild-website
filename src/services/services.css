@@ -61,11 +61,11 @@
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.9);
   text-transform: uppercase;
-  min-height: 5rem; /* Ensures consistent height for titles */
+  min-height: 5rem;
   display: flex;
-  align-items: center; /* Centers single-line titles */
+  align-items: center;
   justify-content: center;
-  text-align: center; /* Keeps text centered */
+  text-align: center;
 }
 
 .service-description {
@@ -74,7 +74,6 @@
   line-height: 1.5;
 }
 
-/* Responsive Adjustments */
 @media screen and (max-width: 1024px) {
   .services-section {
     padding: 2.5rem 1rem;

@@ -4,11 +4,7 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(
-    135deg,
-    #dc0101,
-    #161616
-  );
+  background: linear-gradient(135deg, #dc0101, #161616);
   padding-top: 5rem;
   position: relative;
   overflow: hidden;
@@ -49,7 +45,6 @@ header {
   color: black;
   cursor: pointer;
 }
-/*push*/
 .scroll_down {
   position: absolute;
   right: -2rem;
@@ -59,13 +54,10 @@ header {
   color: white;
   transition: color 0.3s ease;
 }
-/*ghub push */
 .scroll_down:hover {
   color: rgba(255, 255, 255, 0.8);
   color: #e4405f;
 }
-
-/* Header Socials */
 .header_socials {
   position: absolute;
   left: 1rem;
@@ -75,7 +67,6 @@ header {
   align-items: center;
   gap: 0.5rem;
 }
-
 .header_socials a {
   color: white;
   font-size: 1.5rem;
@@ -93,7 +84,6 @@ header {
   background-color: white;
 }
 
-/* Responsive Adjustments */
 @media screen and (max-width: 1024px) {
   header {
     height: 80vh;
