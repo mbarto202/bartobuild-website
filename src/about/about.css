@@ -33,7 +33,7 @@
 .about-text {
   flex: 1;
   max-width: 500px;
-  text-align: left;
+  text-align: center;
 }
 
 .about-text p {

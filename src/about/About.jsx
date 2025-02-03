@@ -6,11 +6,6 @@ const About = () => {
     <section id="about" className="about-section">
       <h2 className="section-title">About Me</h2>
       <div className="about-content">
-        <img
-          src="/path-to-your-image.jpg"
-          alt="Michael Barto"
-          className="about-image"
-        />
         <div className="about-text">
           <p>
             Welcome! I’m Michael Barto, a fitness coach passionate about helping
