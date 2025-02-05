@@ -31,11 +31,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(
-    180deg,
-    #1c1c1c,
-    #2a2a2a
-  ); 
+  background: linear-gradient(180deg, #1c1c1c, #2a2a2a);
   color: var(--color-white);
   line-height: 1.7;
 }
@@ -121,8 +117,8 @@ img {
   letter-spacing: 1.5px;
   margin-bottom: 1.5rem;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.85); /* Soft white for elegance */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
@@ -131,14 +127,13 @@ img {
   display: block;
   width: 20%;
   height: 3px;
-  background: rgba(247, 25, 0, 0.9); /* Subtle red line */
+  background: rgba(247, 25, 0, 0.9);
   margin: 0.5rem auto 0;
   border-radius: 2px;
-  opacity: 0.7; /* Subdued effect */
-  border-radius: 2px; /* Rounded line for a polished look */
+  opacity: 0.7;
+  border-radius: 2px;
 }
 
-/* Responsive Adjustments for Section Titles */
 @media screen and (max-width: 1024px) {
   .section-title {
     font-size: 2rem;
@@ -151,7 +146,6 @@ img {
   }
 }
 
-/* Responsive Adjustments for Medium Devices */
 @media screen and (max-width: 1024px) {
   .container {
     width: var(--container-width-md);
@@ -170,7 +164,6 @@ img {
   }
 }
 
-/* Responsive Adjustments for Small Devices */
 @media screen and (max-width: 600px) {
   .container {
     width: var(--container-width-sm);
