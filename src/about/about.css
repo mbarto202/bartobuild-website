@@ -1,5 +1,4 @@
 .about-section {
-  /* Section-specific styling */
   padding: 4rem 1.5rem;
   background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
   color: white;
@@ -21,13 +20,13 @@
   max-width: 250px;
   height: auto;
   border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Subtle shadow */
-  border: 3px solid rgba(255, 255, 255, 0.2); /* White border for pop */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  border: 3px solid rgba(255, 255, 255, 0.2);
   transition: transform 0.3s ease;
 }
 
 .about-image:hover {
-  transform: scale(1.05); /* Subtle hover effect */
+  transform: scale(1.05);
 }
 
 .about-text {
