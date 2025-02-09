@@ -13,6 +13,9 @@ const About = () => {
             bodybuilding and personal training, I specialize in personalized
             fitness plans tailored to your goals.
           </p>
+          <a href="#services" className="btn btn-primary">
+            Start Your Fitness Journey
+          </a>
         </div>
       </div>
     </section>
