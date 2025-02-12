@@ -53,6 +53,30 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
+.about-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.about-btn .arrow {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.about-btn:hover {
+  color: var(--color-white);
+}
+
+.about-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
 @media screen and (max-width: 768px) {
   .about-content {
     flex-direction: column;

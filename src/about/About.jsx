@@ -30,8 +30,8 @@ const About = () => {
             Welcome! I’m Michael Barto, a fitness coach passionate about helping
             you achieve your dream physique.
           </p>
-          <a href="#services" className="btn btn-primary">
-            Start Your Fitness Journey
+          <a href="#services" className="about-btn">
+            Learn More <span className="arrow">→</span>
           </a>
         </div>
       </div>
