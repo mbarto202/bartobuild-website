@@ -34,6 +34,8 @@ body {
   background: linear-gradient(180deg, #1c1c1c, #2a2a2a);
   color: var(--color-white);
   line-height: 1.7;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  overflow-y: auto; /* Allows scrolling when necessary */
 }
 
 .container {
@@ -134,9 +136,27 @@ img {
   border-radius: 2px;
 }
 
+Header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+  padding-top: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 1024px) {
   .section-title {
     font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  section {
+    padding: 1rem 1rem; /* Reduce padding to avoid overlap */
   }
 }
 
