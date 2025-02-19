@@ -25,7 +25,7 @@ const About = () => {
           className="about-image"
         />
         <div className="about-text">
-          <h2>About Me</h2>
+          <h2 className="section-title">About Me</h2>
           <p>
             Welcome! I’m Michael Barto, a fitness coach passionate about helping
             you achieve your dream physique.
