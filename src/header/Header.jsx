@@ -5,6 +5,14 @@ import HeaderSocial from "./HeaderSocials";
 const Header = () => {
   return (
     <header>
+      <div className="auth-buttons">
+        <a href="/login" className="auth-btn">
+          Login
+        </a>
+        <a href="/signup" className="auth-btn">
+          Sign Up
+        </a>
+      </div>
       <div className="container header_container">
         <div className="titleBg">
           <h1 className="name">Michael Barto</h1>
