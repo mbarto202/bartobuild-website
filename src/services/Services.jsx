@@ -1,8 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./services.css";
 import { FaDumbbell, FaCalendarAlt, FaRegHandshake } from "react-icons/fa";
 
 const Services = () => {
+  const navigate = useNavigate();
+  const isAuthenticated = false; // Change this when implementing authentication
+
+  const handleBooking = (link) => {
+    if (isAuthenticated) {
+      window.location.href = link;
+    } else {
+      navigate("/Login");
+    }
+  };
+
   return (
     <section id="services" className="services-section">
       <h2 className="section-title">Services</h2>
@@ -19,9 +31,12 @@ const Services = () => {
             Personalized 60-minute sessions, only available in-person, focusing
             on bodybuilding or weight loss.
           </p>
-          <a href="https://calendly.com/your-link" className="btn btn-primary">
+          <button
+            onClick={() => handleBooking("https://calendly.com/your-link")}
+            className="btn btn-primary"
+          >
             Book a Session
-          </a>
+          </button>
         </div>
         <div className="service-item">
           <FaCalendarAlt className="service-icon" />
@@ -31,12 +46,14 @@ const Services = () => {
             sessions, tailored workouts, Zoom check-ins, and nutritional
             guidance.
           </p>
-          <a
-            href="https://calendly.com/your-link-premium" //fix link
+          <button
+            onClick={() =>
+              handleBooking("https://calendly.com/your-link-premium")
+            }
             className="btn btn-primary"
           >
             Start Coaching
-          </a>
+          </button>
         </div>
 
         <div className="service-item">
@@ -46,9 +63,12 @@ const Services = () => {
             A 30-minute introductory session to discuss your goals, fitness
             history, and expectations.
           </p>
-          <a href="https://calendly.com/your-link" className="btn btn-primary">
+          <button
+            onClick={() => handleBooking("https://calendly.com/your-link")}
+            className="btn btn-primary"
+          >
             Book a Call
-          </a>
+          </button>
         </div>
       </div>
     </section>
