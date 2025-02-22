@@ -11,7 +11,8 @@ const Login = () => {
   const handleGoogleLogin = async () => {
     setLoading(true);
     try {
-      await signInWithPopup(auth, provider);
+      const result = await signInWithPopup(auth, provider);
+      console.log("User Info:", result.user);
       if (location.state?.returnTo) {
         window.location.href = location.state.returnTo;
       } else {
@@ -19,6 +20,7 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Login Error:", error);
+      alert(`Login Failed: ${error.message}`); // Shows the actual error in an alert
       setLoading(false);
     }
   };
