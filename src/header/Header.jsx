@@ -1,18 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./header.css";
 import HeaderSocial from "./HeaderSocials";
+import { auth, provider } from "../firebase";
+import { signInWithPopup, signOut } from "firebase/auth";
 
 const Header = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Listen for auth changes
+    auth.onAuthStateChanged((authUser) => {
+      setUser(authUser);
+    });
+  }, []);
+
+  const handleLogin = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Login Error:", error);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Logout Error:", error);
+    }
+  };
+
   return (
     <header>
+      {/* Auth Button in Top Right */}
       <div className="auth-buttons">
-        <a href="/login" className="auth-btn">
-          Login
-        </a>
-        <a href="/signup" className="auth-btn">
-          Sign Up
-        </a>
+        {user ? (
+          <button className="auth-btn" onClick={handleLogout}>
+            Logged in as {user.displayName || "User"} (Logout)
+          </button>
+        ) : (
+          <button className="auth-btn" onClick={handleLogin}>
+            Login
+          </button>
+        )}
       </div>
+
       <div className="container header_container">
         <div className="titleBg">
           <h1 className="name">Michael Barto</h1>
