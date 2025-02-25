@@ -1,17 +1,31 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import "./services.css";
 import { FaDumbbell, FaCalendarAlt, FaRegHandshake } from "react-icons/fa";
+import { auth, provider } from "../firebase";
+import { signInWithPopup } from "firebase/auth";
 
 const Services = () => {
-  const navigate = useNavigate();
-  const isAuthenticated = false; // Change this when implementing authentication
+  const [user, setUser] = useState(null);
 
-  const handleBooking = (link) => {
-    if (isAuthenticated) {
+  useEffect(() => {
+    // Listen for auth state changes
+    auth.onAuthStateChanged((authUser) => {
+      setUser(authUser);
+    });
+  }, []);
+
+  const handleBooking = async (link) => {
+    if (user) {
       window.location.href = link;
     } else {
-      navigate("/Login");
+      try {
+        await signInWithPopup(auth, provider);
+        if (auth.currentUser) {
+          window.location.href = link;
+        }
+      } catch (error) {
+        console.error("Login Error:", error);
+      }
     }
   };
 
