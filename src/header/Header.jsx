@@ -30,6 +30,21 @@ const Header = () => {
     }
   };
 
+  const handleBooking = async (link) => {
+    if (user) {
+      window.location.href = link;
+    } else {
+      try {
+        await signInWithPopup(auth, provider);
+        if (auth.currentUser) {
+          window.location.href = link;
+        }
+      } catch (error) {
+        console.error("Login Error:", error);
+      }
+    }
+  };
+
   return (
     <header>
       {/* Auth Button in Top Right */}
@@ -50,8 +65,10 @@ const Header = () => {
           <h1 className="name">Michael Barto</h1>
           <h5 className="title">Your Personal Fitness Coach</h5>
           <a
+            onClick={() =>
+              handleBooking("https://calendly.com/michael-d-barto/30min")
+            }
             className="btn btn-primary"
-            href="https://calendly.com/michael-d-barto/30min"
             target="_blank"
             rel="noopener noreferrer"
           >
