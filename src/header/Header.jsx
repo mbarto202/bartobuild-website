@@ -4,21 +4,50 @@ import HeaderSocial from "./HeaderSocials";
 import { auth, provider } from "../firebase";
 import { signInWithPopup, signOut } from "firebase/auth";
 
+const isFaceIDAvailable = () =>
+  window.PublicKeyCredential &&
+  navigator.credentials &&
+  typeof navigator.credentials.create === "function";
+
 const Header = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Listen for auth changes
     auth.onAuthStateChanged((authUser) => {
       setUser(authUser);
     });
   }, []);
 
-  const handleLogin = async () => {
+  const handleGoogleLogin = async () => {
     try {
       await signInWithPopup(auth, provider);
     } catch (error) {
       console.error("Login Error:", error);
+    }
+  };
+
+  const handleFaceIDLogin = async () => {
+    if (!isFaceIDAvailable()) {
+      alert("Face ID is not supported on this device.");
+      return;
+    }
+
+    try {
+      const credential = await navigator.credentials.get({
+        publicKey: {
+          challenge: new Uint8Array(32),
+          rp: { name: "BartoBuild" },
+          user: { id: new Uint8Array(16), name: "User", displayName: "User" },
+          pubKeyCredParams: [{ alg: -7, type: "public-key" }],
+        },
+      });
+
+      if (credential) {
+        alert("Face ID authentication successful!");
+        // Handle Firebase Custom Auth logic here
+      }
+    } catch (error) {
+      console.error("Face ID Login Error:", error);
     }
   };
 
@@ -30,33 +59,24 @@ const Header = () => {
     }
   };
 
-  const handleBooking = async (link) => {
-    if (user) {
-      window.location.href = link;
-    } else {
-      try {
-        await signInWithPopup(auth, provider);
-        if (auth.currentUser) {
-          window.location.href = link;
-        }
-      } catch (error) {
-        console.error("Login Error:", error);
-      }
-    }
-  };
-
   return (
     <header>
-      {/* Auth Button in Top Right */}
       <div className="auth-buttons">
         {user ? (
           <button className="auth-btn" onClick={handleLogout}>
             Logged in as {user.displayName || "User"} (Logout)
           </button>
         ) : (
-          <button className="auth-btn" onClick={handleLogin}>
-            Login
-          </button>
+          <>
+            <button className="auth-btn" onClick={handleGoogleLogin}>
+              Login with Google
+            </button>
+            {isFaceIDAvailable() && (
+              <button className="auth-btn" onClick={handleFaceIDLogin}>
+                Login with Face ID
+              </button>
+            )}
+          </>
         )}
       </div>
 
@@ -65,10 +85,8 @@ const Header = () => {
           <h1 className="name">Michael Barto</h1>
           <h5 className="title">Your Personal Fitness Coach</h5>
           <a
-            onClick={() =>
-              handleBooking("https://calendly.com/michael-d-barto/30min")
-            }
             className="btn btn-primary"
+            href="https://calendly.com/michael-d-barto/30min"
             target="_blank"
             rel="noopener noreferrer"
           >
