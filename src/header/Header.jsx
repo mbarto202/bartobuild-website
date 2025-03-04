@@ -3,63 +3,37 @@ import "./header.css";
 import HeaderSocial from "./HeaderSocials";
 import {
   auth,
-  provider,
-  signInWithCredential,
+  googleLogin,
+  logout,
   authenticateWithPasskey,
 } from "../firebase";
-import { signInWithPopup, signOut } from "firebase/auth";
 
 const Header = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    // Listen for user authentication state changes
     auth.onAuthStateChanged((authUser) => {
       setUser(authUser);
     });
   }, []);
 
-  const handleGoogleLogin = async () => {
-    try {
-      await signInWithPopup(auth, provider);
-    } catch (error) {
-      console.error("Google Login Error:", error);
-    }
-  };
-
-  const handleFaceIDLogin = async () => {
-    try {
-      const credential = await authenticateWithPasskey();
-      if (credential) {
-        console.log("Face ID Login Successful:", credential);
-      } else {
-        console.error("Face ID Login Failed");
-      }
-    } catch (error) {
-      console.error("Face ID Login Error:", error);
-    }
-  };
-
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.error("Logout Error:", error);
-    }
-  };
-
   return (
     <header>
+      {/* Auth Buttons */}
       <div className="auth-buttons">
         {user ? (
-          <button className="auth-btn" onClick={handleLogout}>
-            Logout ({user.displayName || "User"})
-          </button>
+          <>
+            <button className="auth-btn" onClick={logout}>
+              Logout ({user.displayName || "User"})
+            </button>
+          </>
         ) : (
           <>
-            <button className="auth-btn" onClick={handleGoogleLogin}>
+            <button className="auth-btn" onClick={googleLogin}>
               Login with Google
             </button>
-            <button className="auth-btn" onClick={handleFaceIDLogin}>
+            <button className="auth-btn" onClick={authenticateWithPasskey}>
               Login with Face ID
             </button>
           </>

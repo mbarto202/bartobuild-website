@@ -4,6 +4,8 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
+  signInWithCredential,
+  EmailAuthProvider,
 } from "firebase/auth";
 import { Passkeys } from "passkeys-js";
 
@@ -12,61 +14,100 @@ const firebaseConfig = {
   authDomain: "bartobuild-auth.firebaseapp.com",
   projectId: "bartobuild-auth",
   storageBucket: "bartobuild-auth.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID", // Replace with actual ID
+  appId: "YOUR_APP_ID", // Replace with actual ID
 };
 
-// Initialize Firebase & Services
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-const passkeys = new Passkeys();
 
-// Google Sign-in Function
+/**
+ * Google Login
+ */
 const googleLogin = async () => {
   try {
-    await signInWithPopup(auth, provider);
-    console.log("✅ Google Login Successful");
+    const result = await signInWithPopup(auth, provider);
+    console.log("Google Login Successful:", result.user);
+
+    // Automatically register Passkey after first login
+    await registerWithPasskey();
   } catch (error) {
-    console.error("❌ Google Login Error:", error);
+    console.error("Google Login Error:", error);
   }
 };
 
-// Logout Function
+/**
+ * Logout
+ */
 const logout = async () => {
   try {
     await signOut(auth);
-    console.log("✅ User Logged Out");
+    console.log("User Logged Out");
   } catch (error) {
-    console.error("❌ Logout Error:", error);
+    console.error("Logout Error:", error);
   }
 };
 
-// Register Face ID / Passkey
+/**
+ * Register Face ID (Passkey)
+ * Called after first login to enable Passkey for future logins.
+ */
 const registerWithPasskey = async () => {
   try {
-    const credential = await passkeys.register();
-    console.log("✅ Passkey registered:", credential);
+    const credential = await Passkeys.register({
+      rpId: "bartobuild-website.vercel.app",
+      user: {
+        id: auth.currentUser?.uid || "guest",
+        name: auth.currentUser?.displayName || "Guest User",
+      },
+    });
+
+    if (!credential) {
+      console.error("No credential received from Passkey registration.");
+      return null;
+    }
+
+    console.log("Passkey Registered:", credential);
+
+    // Store Passkey credential in Firebase Authentication
+    const firebaseCredential = EmailAuthProvider.credential(
+      credential.id,
+      credential.rawId
+    );
+    await signInWithCredential(auth, firebaseCredential);
+
+    console.log("Face ID Linked to Firebase Account");
     return credential;
   } catch (error) {
-    console.error("❌ Passkey registration failed:", error);
+    console.error("Passkey Registration Failed:", error);
     return null;
   }
 };
 
-// Authenticate Face ID / Passkey
+/**
+ * Authenticate with Face ID (Passkey)
+ * Used for logging in without Google.
+ */
 const authenticateWithPasskey = async () => {
   try {
-    const credential = await passkeys.authenticate();
-    console.log("✅ Passkey authentication successful:", credential);
-    return credential;
+    const credential = await Passkeys.authenticate();
+    console.log("✅ Passkey Authentication Successful:", credential);
+
+    // Sign into Firebase using the Passkey
+    const firebaseCredential = EmailAuthProvider.credential(
+      credential.id,
+      credential.rawId
+    );
+    await signInWithCredential(auth, firebaseCredential);
+
+    console.log("User Logged in with Face ID!");
   } catch (error) {
-    console.error("❌ Passkey authentication failed:", error);
-    return null;
+    console.error("Face ID Login Failed:", error);
   }
 };
 
-// Export Functions
 export {
   auth,
   provider,
