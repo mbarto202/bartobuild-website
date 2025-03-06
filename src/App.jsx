@@ -4,6 +4,7 @@ import Header from "./header/Header";
 import Nav from "./nav/Nav";
 import About from "./about/About";
 import Services from "./services/Services";
+import ContactForm from "./contact/ContactForm";
 import Footer from "./footer/Footer";
 import Login from "./auth/Login";
 
@@ -20,6 +21,7 @@ const App = () => {
               <>
                 <About />
                 <Services />
+                <ContactForm />
               </>
             }
           />

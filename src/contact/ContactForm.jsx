@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { auth } from "../firebase";
 
 const ContactForm = () => {
   const user = auth.currentUser; // Get logged-in user
+
   const [formData, setFormData] = useState({
     name: "",
     email: user ? user.email : "", // Auto-fill email if logged in
@@ -17,6 +18,8 @@ const ContactForm = () => {
     e.preventDefault();
     console.log("Message Sent:", formData);
     alert("Message Sent! ✅");
+
+    // Reset form (keep autofilled email if user is logged in)
     setFormData({ name: "", email: user ? user.email : "", message: "" });
   };
 
