@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { auth } from "../firebase";
+import "./ContactForm.css";
 
 const ContactForm = () => {
   const user = auth.currentUser; // Get logged-in user
