@@ -20,7 +20,6 @@ const Header = () => {
 
   return (
     <header>
-      {/* Auth Buttons */}
       <div className="auth-buttons">
         {user ? (
           <>
@@ -32,9 +31,6 @@ const Header = () => {
           <>
             <button className="auth-btn" onClick={googleLogin}>
               Login with Google
-            </button>
-            <button className="auth-btn" onClick={authenticateWithPasskey}>
-              Login with Face ID
             </button>
           </>
         )}
