@@ -3,7 +3,7 @@ import { auth } from "../firebase";
 import "./ContactForm.css";
 
 const ContactForm = () => {
-  const user = auth.currentUser; // Get logged-in user
+  const user = auth.currentUser;
 
   const [formData, setFormData] = useState({
     name: "",
@@ -18,9 +18,8 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Message Sent:", formData);
-    alert("Message Sent! ✅");
+    alert("Message Sent!");
 
-    // Reset form (keep autofilled email if user is logged in)
     setFormData({ name: "", email: user ? user.email : "", message: "" });
   };
 
@@ -43,7 +42,7 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          disabled={user} // Prevent editing if auto-filled
+          disabled={user}
         />
         <textarea
           name="message"
