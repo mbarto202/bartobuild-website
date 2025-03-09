@@ -12,11 +12,18 @@ const Header = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Listen for user authentication state changes
     auth.onAuthStateChanged((authUser) => {
       setUser(authUser);
     });
   }, []);
+
+  const handleBooking = async () => {
+    if (user) {
+      window.location.href = "https://calendly.com/michael-d-barto/30min";
+    } else {
+      await googleLogin();
+    }
+  };
 
   return (
     <header>
@@ -40,14 +47,9 @@ const Header = () => {
         <div className="titleBg">
           <h1 className="name">Michael Barto</h1>
           <h5 className="title">Your Personal Fitness Coach</h5>
-          <a
-            className="btn btn-primary"
-            href="https://calendly.com/michael-d-barto/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <button className="btn btn-primary" onClick={handleBooking}>
             Book a Call
-          </a>
+          </button>
         </div>
         <HeaderSocial />
         <a href="#contact" className="scroll_down">
