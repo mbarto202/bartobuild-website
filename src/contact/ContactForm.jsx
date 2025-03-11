@@ -25,7 +25,7 @@ const ContactForm = () => {
 
   return (
     <section className="contact-section">
-      <h2>Contact Me</h2>
+      <h2 className="section-title">Contact Me</h2>
       <form onSubmit={handleSubmit} className="contact-form">
         <input
           type="text"
