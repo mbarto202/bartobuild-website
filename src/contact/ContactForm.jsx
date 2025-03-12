@@ -1,15 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { auth } from "../firebase";
 import "./ContactForm.css";
 
 const ContactForm = () => {
-  const user = auth.currentUser;
-
+  const [user, setUser] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
-    email: user ? user.email : "", // Auto-fill email if logged in
+    email: "",
     message: "",
   });
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setUser(authUser);
+        setFormData((prev) => ({
+          ...prev,
+          email: authUser.email, // Auto-fill email dynamically when logged in
+        }));
+      } else {
+        setUser(null);
+        setFormData((prev) => ({ ...prev, email: "" })); // Clear email if logged out
+      }
+    });
+
+    return () => unsubscribe(); // Cleanup listener
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,7 +34,7 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Message Sent:", formData);
-    alert("Message Sent!");
+    alert("Message Sent! ✅");
 
     setFormData({ name: "", email: user ? user.email : "", message: "" });
   };
@@ -42,7 +58,7 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          disabled={user}
+          disabled={!!user}
         />
         <textarea
           name="message"
