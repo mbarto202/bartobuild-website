@@ -52,7 +52,7 @@
 
 .contact-form button {
   padding: 0.8rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   background: var(--color-accent);
   color: white;
   background: linear-gradient(135deg, #dc0101, #74030367);
@@ -66,7 +66,6 @@
   background: linear-gradient(135deg, #a60202, #74030367);
 }
 
-/* Responsive Design */
 @media screen and (max-width: 600px) {
   .contact-section {
     padding: 3rem 1rem;
