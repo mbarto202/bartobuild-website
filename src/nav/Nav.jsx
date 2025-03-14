@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./nav.css";
 import { RiHome7Line } from "react-icons/ri";
 import { BiMessageDots } from "react-icons/bi";
 import { TbFlame } from "react-icons/tb";
-import { useState } from "react";
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("#");
+
   return (
     <nav>
       <a
@@ -25,8 +25,8 @@ const Nav = () => {
       </a>
       <a
         href="#contact"
-        onClick={() => setActiveNav("#footer")}
-        className={activeNav === "#footer" ? "active" : ""}
+        onClick={() => setActiveNav("#contact")}
+        className={activeNav === "#contact" ? "active" : ""}
       >
         <BiMessageDots />
       </a>
