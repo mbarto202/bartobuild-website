@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./header/Header";
+import ContactForm from "./contact/ContactForm";
 import Nav from "./nav/Nav";
 import About from "./about/About";
 import Services from "./services/Services";
@@ -20,6 +21,7 @@ const App = () => {
               <>
                 <About />
                 <Services />
+                <ContactForm />
               </>
             }
           />

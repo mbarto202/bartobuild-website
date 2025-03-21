@@ -1,11 +1,20 @@
-import React, { useState } from "react";
-import "./nav.css";
+import React, { useState, useEffect } from "react";
 import { RiHome7Line } from "react-icons/ri";
 import { BiMessageDots } from "react-icons/bi";
 import { TbFlame } from "react-icons/tb";
+import { MdDashboard } from "react-icons/md"; // Dashboard Icon
+import { auth } from "../firebase";
+import "./nav.css";
 
 const Nav = () => {
   const [activeNav, setActiveNav] = useState("#");
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      setUser(authUser);
+    });
+  }, []);
 
   return (
     <nav>
@@ -30,6 +39,15 @@ const Nav = () => {
       >
         <BiMessageDots />
       </a>
+      {user && ( // Show Dashboard button only if logged in
+        <a
+          href="/dashboard"
+          onClick={() => setActiveNav("#dashboard")}
+          className={activeNav === "#dashboard" ? "active" : ""}
+        >
+          <MdDashboard />
+        </a>
+      )}
     </nav>
   );
 };
