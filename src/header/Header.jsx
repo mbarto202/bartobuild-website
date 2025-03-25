@@ -2,43 +2,37 @@ import React, { useState, useEffect } from "react";
 import "./header.css";
 import HeaderSocial from "./HeaderSocials";
 import { auth, googleLogin, logout } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Listen for user authentication state changes
-    auth.onAuthStateChanged((authUser) => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
       setUser(authUser);
     });
+
+    return () => unsubscribe();
   }, []);
-
-  // Generate Calendly booking link with user's email
-  const getCalendlyLink = () => {
-    const baseUrl = "https://calendly.com/michael-d-barto/30min";
-
-    if (user?.email) {
-      return `${baseUrl}?email=${encodeURIComponent(user.email)}`;
-    }
-
-    return baseUrl; // Default if user is not logged in
-  };
 
   return (
     <header>
+      {/* Auth Buttons */}
       <div className="auth-buttons">
         {user ? (
           <>
+            <button className="auth-btn" onClick={() => navigate("/dashboard")}>
+              Dashboard
+            </button>
             <button className="auth-btn" onClick={logout}>
               Logout ({user.displayName || "User"})
             </button>
           </>
         ) : (
-          <>
-            <button className="auth-btn" onClick={googleLogin}>
-              Login with Google
-            </button>
-          </>
+          <button className="auth-btn" onClick={googleLogin}>
+            Login with Google
+          </button>
         )}
       </div>
 
@@ -48,7 +42,7 @@ const Header = () => {
           <h5 className="title">Your Personal Fitness Coach</h5>
           <a
             className="btn btn-primary"
-            href={getCalendlyLink()} // ✅ Passes email automatically
+            href="https://calendly.com/michael-d-barto/30min"
             target="_blank"
             rel="noopener noreferrer"
           >
