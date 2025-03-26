@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { RiHome7Line } from "react-icons/ri";
-import { BiMessageDots } from "react-icons/bi";
-import { TbFlame } from "react-icons/tb";
-import { MdDashboard } from "react-icons/md"; // Dashboard Icon
-import { auth } from "../firebase";
-import "./nav.css";
+import "./header.css";
+import HeaderSocial from "./HeaderSocials";
+import { auth, googleLogin, logout } from "../firebase";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-const Nav = () => {
-  const [activeNav, setActiveNav] = useState("#");
+const Header = () => {
   const [user, setUser] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
@@ -16,31 +14,76 @@ const Nav = () => {
     });
   }, []);
 
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
   return (
-    <nav>
-      <a
-        href="#"
-        onClick={() => setActiveNav("#")}
-        className={activeNav === "#" ? "active" : ""}
-      >
-        <RiHome7Line />
-      </a>
-      <a
-        href="#services"
-        onClick={() => setActiveNav("#services")}
-        className={activeNav === "#services" ? "active" : ""}
-      >
-        <TbFlame />
-      </a>
-      <a
-        href="#contact"
-        onClick={() => setActiveNav("#contact")}
-        className={activeNav === "#contact" ? "active" : ""}
-      >
-        <BiMessageDots />
-      </a>
-    </nav>
+    <header>
+      {/* Auth Buttons & Mobile Menu */}
+      <div className="auth-buttons">
+        <div className="desktop-buttons">
+          {user ? (
+            <button className="auth-btn" onClick={logout}>
+              Logout ({user.displayName || "User"})
+            </button>
+          ) : (
+            <button className="auth-btn" onClick={googleLogin}>
+              Login
+            </button>
+          )}
+          {user && (
+            <a href="/dashboard" className="auth-btn">
+              Dashboard
+            </a>
+          )}
+        </div>
+
+        <div className="hamburger" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+
+        {menuOpen && (
+          <div className="mobile-menu">
+            {!user && (
+              <button className="auth-btn" onClick={googleLogin}>
+                Login
+              </button>
+            )}
+            {user && (
+              <>
+                <a href="/dashboard" className="auth-btn">
+                  Dashboard
+                </a>
+                <button className="auth-btn" onClick={logout}>
+                  Logout
+                </button>
+              </>
+            )}
+          </div>
+        )}
+      </div>
+
+      <div className="container header_container">
+        <div className="titleBg">
+          <h1 className="name">Michael Barto</h1>
+          <h5 className="title">Your Personal Fitness Coach</h5>
+          <a
+            className="btn btn-primary"
+            href="https://calendly.com/michael-d-barto/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book a Call
+          </a>
+        </div>
+        <HeaderSocial />
+        <a href="#contact" className="scroll_down">
+          Scroll Down
+        </a>
+      </div>
+    </header>
   );
 };
 
-export default Nav;
+export default Header;
