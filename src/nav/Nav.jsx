@@ -39,15 +39,6 @@ const Nav = () => {
       >
         <BiMessageDots />
       </a>
-      {user && ( // Show Dashboard button only if logged in
-        <a
-          href="/dashboard"
-          onClick={() => setActiveNav("#dashboard")}
-          className={activeNav === "#dashboard" ? "active" : ""}
-        >
-          <MdDashboard />
-        </a>
-      )}
     </nav>
   );
 };
