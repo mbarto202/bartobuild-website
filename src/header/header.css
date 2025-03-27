@@ -91,6 +91,7 @@ header {
   top: 1.5rem;
   right: 2rem;
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -108,6 +109,13 @@ header {
 .auth-btn:hover {
   color: white;
   text-decoration: underline;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1024px) {
