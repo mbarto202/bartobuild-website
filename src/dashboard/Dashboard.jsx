@@ -26,10 +26,6 @@ const Dashboard = () => {
           <h3>Upcoming Appointments</h3>
           {/* Fetch and display Calendly appointments here */}
         </div>
-        <div className="dashboard-section">
-          <h3>Workout Recommendations</h3>
-          {/* Display user-specific workout tips */}
-        </div>
       </div>
     </div>
   );
