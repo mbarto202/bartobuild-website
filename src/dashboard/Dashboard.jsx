@@ -6,25 +6,29 @@ const Dashboard = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
       setUser(authUser);
     });
+    return () => unsubscribe();
   }, []);
 
   return (
     <div className="dashboard-container">
-      <h2>Welcome to Your Dashboard</h2>
-      {user ? (
-        <p>
-          Logged in as: <strong>{user.email}</strong>
-        </p>
-      ) : (
-        <p>Please log in to access your dashboard.</p>
-      )}
+      <h2 className="dashboard-title">
+        {user
+          ? `Welcome, ${user.displayName || "Athlete"}!`
+          : "Welcome to Your Dashboard"}
+      </h2>
+      <p className="dashboard-subtitle">
+        {user
+          ? `Logged in as: ${user.email}`
+          : "Please log in to access your dashboard."}
+      </p>
+
       <div className="dashboard-content">
         <div className="dashboard-section">
-          <h3>Upcoming Appointments</h3>
-          {/* Fetch and display Calendly appointments here */}
+          <h3>📅 Upcoming Appointments</h3>
+          <p>No appointments yet. Stay tuned or book one!</p>
         </div>
       </div>
     </div>
