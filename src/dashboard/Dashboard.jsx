@@ -19,11 +19,12 @@ const Dashboard = () => {
           ? `Welcome, ${user.displayName || "Athlete"}!`
           : "Welcome to Your Dashboard"}
       </h2>
-      <p className="dashboard-subtitle">
-        {user
-          ? `Logged in as: ${user.email}`
-          : "Please log in to access your dashboard."}
-      </p>
+
+      {!user && (
+        <p className="dashboard-subtitle">
+          Please log in to access your dashboard.
+        </p>
+      )}
 
       <div className="dashboard-content">
         <div className="dashboard-section">
