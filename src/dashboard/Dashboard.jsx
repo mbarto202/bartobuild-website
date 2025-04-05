@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom"; // <-- import navigate hook
 import "./dashboard.css";
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate(); // <-- initialize navigate
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -11,6 +13,10 @@ const Dashboard = () => {
     });
     return () => unsubscribe();
   }, []);
+
+  const handleBackHome = () => {
+    navigate("/");
+  };
 
   return (
     <div className="dashboard-container">
@@ -32,6 +38,11 @@ const Dashboard = () => {
           <p>No appointments yet. Stay tuned or book one!</p>
         </div>
       </div>
+
+      {/* 🏠 Back to homepage button */}
+      <button className="dashboard-home-btn" onClick={handleBackHome}>
+        ⬅ Back to Home
+      </button>
     </div>
   );
 };
