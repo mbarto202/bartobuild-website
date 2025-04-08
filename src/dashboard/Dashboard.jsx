@@ -29,11 +29,17 @@ const Dashboard = () => {
           : "Welcome to Your Dashboard"}
       </h2>
 
-      <div className="dashboard-content">
-        <div className="dashboard-section">
-          <h3>📅 Upcoming Appointments</h3>
-          <p>No appointments yet. Stay tuned or book one!</p>
-        </div>
+      <div className="dashboard-section">
+        <h3>📅 Upcoming Appointments</h3>
+        <p>No appointments yet. Stay tuned or book one!</p>
+        <a
+          className="btn btn-primary"
+          href="https://calendly.com/michael-d-barto/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book Now
+        </a>
       </div>
     </div>
   );
