@@ -16,10 +16,9 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      {/* Top-right Home button */}
       <div className="dashboard-top-right">
         <button className="auth-btn" onClick={() => navigate("/")}>
-          ⬅ Back to Home
+          Back to Home
         </button>
       </div>
 
