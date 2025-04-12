@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./services.css";
 import { FaDumbbell, FaCalendarAlt, FaRegHandshake } from "react-icons/fa";
 import { auth, provider } from "../firebase";
@@ -6,12 +6,27 @@ import { signInWithPopup } from "firebase/auth";
 
 const Services = () => {
   const [user, setUser] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Listen for auth state changes
     auth.onAuthStateChanged((authUser) => {
       setUser(authUser);
     });
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("services");
+      if (
+        section &&
+        section.getBoundingClientRect().top < window.innerHeight * 0.75
+      ) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleBooking = async (link) => {
@@ -30,7 +45,10 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="services-section">
+    <section
+      id="services"
+      className={`services-section ${isVisible ? "show" : ""}`}
+    >
       <h2 className="section-title">Services</h2>
       <p className="services-intro">
         At BartoBuild, I offer services tailored to your fitness journey.
@@ -52,6 +70,7 @@ const Services = () => {
             Book a Session
           </button>
         </div>
+
         <div className="service-item">
           <FaCalendarAlt className="service-icon" />
           <h3 className="service-title">Premium Monthly Coaching</h3>
