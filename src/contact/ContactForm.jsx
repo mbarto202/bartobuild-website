@@ -4,27 +4,44 @@ import "./ContactForm.css";
 
 const ContactForm = () => {
   const [user, setUser] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  // Auto-fill email if logged in
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         setUser(authUser);
         setFormData((prev) => ({
           ...prev,
-          email: authUser.email, // Auto-fill email dynamically when logged in
+          email: authUser.email,
         }));
       } else {
         setUser(null);
-        setFormData((prev) => ({ ...prev, email: "" })); // Clear email if logged out
+        setFormData((prev) => ({ ...prev, email: "" }));
       }
     });
+    return () => unsubscribe();
+  }, []);
 
-    return () => unsubscribe(); // Cleanup listener
+  // Scroll animation effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("contact");
+      if (
+        section &&
+        section.getBoundingClientRect().top < window.innerHeight * 0.75
+      ) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleChange = (e) => {
@@ -40,7 +57,10 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="contact-section">
+    <section
+      id="contact"
+      className={`contact-section ${isVisible ? "show" : ""}`}
+    >
       <h2 className="section-title">Contact Me</h2>
       <form onSubmit={handleSubmit} className="contact-form">
         <input
