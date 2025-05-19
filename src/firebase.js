@@ -14,8 +14,8 @@ const firebaseConfig = {
   authDomain: "bartobuild-auth.firebaseapp.com",
   projectId: "bartobuild-auth",
   storageBucket: "bartobuild-auth.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID", // Replace with actual ID
-  appId: "YOUR_APP_ID", // Replace with actual ID
+  messagingSenderId: "322355536724",
+  appId: "1:322355536724:web:87f201a781f82d0253dec1",
 };
 
 // Initialize Firebase
