@@ -48,12 +48,33 @@ const ContactForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Message Sent:", formData);
-    alert("Message Sent!");
 
-    setFormData({ name: "", email: user ? user.email : "", message: "" });
+    try {
+      const response = await fetch(
+        "https://40pquw2obk.execute-api.us-east-1.amazonaws.com/default/contactFormHandler",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to send message.");
+      }
+
+      console.log("Message sent to backend:", formData);
+      alert("Message Sent!");
+
+      setFormData({ name: "", email: user ? user.email : "", message: "" });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Something went wrong. Please try again later.");
+    }
   };
 
   return (
