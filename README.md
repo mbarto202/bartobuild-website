@@ -1,14 +1,14 @@
-# BartoBuild 💪
+# BartoBuild
 
 **BartoBuild** is a personal training and fitness coaching platform built for clients looking to transform their physique through guided programs and expert support. The project showcases a modern frontend, secure AWS-powered backend, and interactive contact flow.
 
-## 🚀 Live Site
+## Live Site
 
-👉 [bartobuild.com](https://bartobuild.com)
+[bartobuild.com](https://bartobuild.com)
 
 ---
 
-## 📌 Features
+## Features
 
 - Fully responsive React frontend
 - Animated UI elements with scroll effects
@@ -20,7 +20,7 @@
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 ### Frontend
 
