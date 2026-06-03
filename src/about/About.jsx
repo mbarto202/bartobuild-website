@@ -24,10 +24,9 @@ const About = () => {
         <div className="about-text">
           <h2 className="section-title">About Me</h2>
           <p>
-            Welcome! I’m Michael, a fitness coach passionate about helping you
-            achieve your dream physique. I’ve competed in natural bodybuilding
-            for two years and have experience coaching clients through personal
-            training and contest prep.
+            Welcome! I'm Michael, a NASM Certified Personal Trainer and natural
+            bodybuilder passionate about helping clients improve their health
+            and achieve their dream physique.
           </p>
           <a href="#services" className="about-btn">
             Learn More <span className="arrow">→</span>
