@@ -1,22 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./header.css";
 import HeaderSocial from "./HeaderSocials";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  const goToClientPortal = () => {
+    setMenuOpen(false);
+    navigate("/dashboard");
+  };
 
   return (
     <header>
-      {/* Auth Buttons */}
       <div className="auth-buttons">
-        <button className="auth-btn" onClick={() => navigate("/dashboard")}>
-          Client Portal
-        </button>
+        <div className="desktop-buttons">
+          <button className="auth-btn" onClick={goToClientPortal}>
+            Client Portal
+          </button>
+        </div>
+
+        <div className="hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+
+        {menuOpen && (
+          <div className="mobile-menu">
+            <button className="auth-btn" onClick={goToClientPortal}>
+              Client Portal
+            </button>
+          </div>
+        )}
       </div>
 
-      {/* Title and Call to Action */}
       <div className="container header_container">
         <div className="titleBg">
           <h1 className="name">Michael Barto</h1>
