@@ -42,10 +42,11 @@ const Services = () => {
       <div className="services-container">
         <div className="service-item">
           <FaDumbbell className="service-icon" />
-          <h3 className="service-title">One-on-One Training</h3>
+          <h3 className="service-title">Single Training Session</h3>
           <p className="service-description">
-            In-person training sessions built around proper form, progressive
-            overload, muscle building, fat loss, and long-term consistency.
+            A one-on-one in-person training session focused on proper form,
+            workout structure, muscle building, fat loss, and building
+            confidence in the gym.
           </p>
           <button
             onClick={() => openBookingLink("https://calendly.com/your-link")}
