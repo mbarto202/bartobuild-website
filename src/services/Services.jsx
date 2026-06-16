@@ -58,10 +58,11 @@ const Services = () => {
 
         <div className="service-item">
           <FaCalendarAlt className="service-icon" />
-          <h3 className="service-title">Monthly Coaching</h3>
+          <h3 className="service-title">Monthly Training Commitment</h3>
           <p className="service-description">
-            A structured coaching option for clients who want weekly training,
-            accountability, goal tracking, and simple nutrition guidance.
+            A more consistent option for clients who want weekly in-person
+            training, accountability, simple nutrition guidance, and a
+            structured plan to follow.
           </p>
           <button
             onClick={() => openBookingLink("https://calendly.com/your-link")}
