@@ -48,12 +48,6 @@ const Services = () => {
             workout structure, muscle building, fat loss, and building
             confidence in the gym.
           </p>
-          <button
-            onClick={() => openBookingLink("https://calendly.com/your-link")}
-            className="btn btn-primary"
-          >
-            Book a Session
-          </button>
         </div>
 
         <div className="service-item">
@@ -64,12 +58,6 @@ const Services = () => {
             training, accountability, simple nutrition guidance, and a
             structured plan to follow.
           </p>
-          <button
-            onClick={() => openBookingLink("https://calendly.com/your-link")}
-            className="btn btn-primary"
-          >
-            Start Coaching
-          </button>
         </div>
 
         <div className="service-item">
