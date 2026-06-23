@@ -44,20 +44,23 @@ const Services = () => {
           <FaDumbbell className="service-icon" />
           <h3 className="service-title">Single Training Session</h3>
           <p className="service-description">
-            A one-on-one in-person training session focused on proper form,
-            workout structure, muscle building, fat loss, and building
-            confidence in the gym.
+            A one on one in person training session focused on proper form,
+            strength development, hypertrophy, fat loss, and building confidence
+            in the gym.
           </p>
+          <p className="service-price single-session-price">$45 / session</p>
         </div>
 
         <div className="service-item">
           <FaCalendarAlt className="service-icon" />
           <h3 className="service-title">Monthly Training Commitment</h3>
           <p className="service-description">
-            A more consistent option for clients who want weekly in-person
-            training, accountability, simple nutrition guidance, and a
-            structured plan to follow.
+            A monthly commitment that includes two in person training sessions
+            each week, nutrition guidance, and a personalized plan to help you
+            stay consistent and make progress.
           </p>
+          <p className="service-price">$320 / month</p>
+          <span className="service-note">Includes 8 sessions per month</span>
         </div>
 
         <div className="service-item">
@@ -65,11 +68,11 @@ const Services = () => {
           <h3 className="service-title">Free Consultation</h3>
           <p className="service-description">
             A quick intro call to talk through your goals, training history,
-            schedule, and whether BartoBuild is the right fit for you.
+            schedule, and decide which option makes the most sense for you.
           </p>
           <button
             onClick={() => openBookingLink("https://calendly.com/your-link")}
-            className="btn btn-primary"
+            className="btn btn-primary consultation-button"
           >
             Book a Call
           </button>

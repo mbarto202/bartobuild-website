@@ -88,6 +88,28 @@
   flex-grow: 1;
 }
 
+.service-price {
+  margin: 1rem 0 0.25rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.single-session-price {
+  position: relative;
+  top: -20px;
+}
+
+.consultation-button {
+  position: relative;
+  top: -12px;
+}
+
+.service-note {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 @media screen and (max-width: 1024px) {
   .services-section {
     padding: 2.5rem 1rem;
@@ -99,6 +121,16 @@
 
   .service-description {
     font-size: 0.95rem;
+  }
+
+  .single-session-price {
+    position: relative;
+    top: -2px;
+  }
+
+  .consultation-button {
+    position: relative;
+    top: -2px;
   }
 }
 
