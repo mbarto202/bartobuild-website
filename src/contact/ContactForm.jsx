@@ -1,37 +1,19 @@
 import { useState, useEffect } from "react";
-import { auth } from "../firebase";
 import "./ContactForm.css";
 
 const ContactForm = () => {
-  const [user, setUser] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  // Auto-fill email if logged in
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        setUser(authUser);
-        setFormData((prev) => ({
-          ...prev,
-          email: authUser.email,
-        }));
-      } else {
-        setUser(null);
-        setFormData((prev) => ({ ...prev, email: "" }));
-      }
-    });
-    return () => unsubscribe();
-  }, []);
-
-  // Scroll animation effect
   useEffect(() => {
     const handleScroll = () => {
       const section = document.getElementById("contact");
+
       if (
         section &&
         section.getBoundingClientRect().top < window.innerHeight * 0.75
@@ -40,16 +22,22 @@ const ContactForm = () => {
       }
     };
 
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       const response = await fetch(
@@ -60,20 +48,20 @@ const ContactForm = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        }
+        },
       );
 
       if (!response.ok) {
         throw new Error("Failed to send message.");
       }
 
-      console.log("Message sent to backend:", formData);
-      alert("Message Sent!");
-
-      setFormData({ name: "", email: user ? user.email : "", message: "" });
+      alert("Message sent!");
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("Error sending message:", error);
       alert("Something went wrong. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -83,6 +71,7 @@ const ContactForm = () => {
       className={`contact-section ${isVisible ? "show" : ""}`}
     >
       <h2 className="section-title">Contact Me</h2>
+
       <form onSubmit={handleSubmit} className="contact-form">
         <input
           type="text"
@@ -92,6 +81,7 @@ const ContactForm = () => {
           onChange={handleChange}
           required
         />
+
         <input
           type="email"
           name="email"
@@ -99,8 +89,8 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          disabled={!!user}
         />
+
         <textarea
           name="message"
           placeholder="Your Message"
@@ -108,7 +98,10 @@ const ContactForm = () => {
           onChange={handleChange}
           required
         />
-        <button type="submit">Send Message</button>
+
+        <button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Sending..." : "Send Message"}
+        </button>
       </form>
     </section>
   );
