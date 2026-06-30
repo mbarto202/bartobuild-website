@@ -25,7 +25,7 @@ const App = () => {
               <>
                 <About />
                 <Services />
-                <ContactForm />
+                {/*<ContactForm />*/}
               </>
             }
           />
