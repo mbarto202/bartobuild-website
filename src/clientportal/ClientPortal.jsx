@@ -32,7 +32,10 @@ const ClientPortal = () => {
           <button type="submit">Continue</button>
         </form>
 
-        <p className="portal-note">Client dashboard access coming soon.</p>
+        <p className="portal-note">
+          Client dashboard is currently under development. Please use the client
+          code provided once access becomes available.
+        </p>
       </div>
     </section>
   );
