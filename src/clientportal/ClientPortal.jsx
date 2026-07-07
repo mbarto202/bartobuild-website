@@ -1,8 +1,10 @@
 import { useState } from "react";
 import "./ClientPortal.css";
+import { useNavigate } from "react-router-dom";
 
 const ClientPortal = () => {
   const [clientCode, setClientCode] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,6 +17,9 @@ const ClientPortal = () => {
   return (
     <section className="client-portal">
       <div className="client-portal-card">
+        <button className="back-button" onClick={() => navigate("/")}>
+          ← Back
+        </button>
         <h1>Client Portal</h1>
 
         <p className="portal-subtitle">
