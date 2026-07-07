@@ -5,17 +5,20 @@ import Nav from "./nav/Nav";
 import About from "./about/About";
 import Services from "./services/Services";
 import Footer from "./footer/Footer";
-import ContactForm from "./contact/ContactForm";
+// import ContactForm from "./contact/ContactForm";
 import Dashboard from "./dashboard/Dashboard";
+import ClientPortal from "./clientportal/ClientPortal";
 
 const App = () => {
   const location = useLocation();
-  const isDashboard = location.pathname.startsWith("/dashboard");
+  const isPortalPage =
+    location.pathname.startsWith("/dashboard") ||
+    location.pathname.startsWith("/client-portal");
 
   return (
     <>
-      {!isDashboard && <Header />}
-      {!isDashboard && <Nav />}
+      {!isPortalPage && <Header />}
+      {!isPortalPage && <Nav />}
 
       <main>
         <Routes>
@@ -30,10 +33,11 @@ const App = () => {
             }
           />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/client-portal" element={<ClientPortal />} />
         </Routes>
       </main>
 
-      {!isDashboard && <Footer />}
+      {!isPortalPage && <Footer />}
     </>
   );
 };

@@ -10,7 +10,7 @@ const Header = () => {
 
   const goToClientPortal = () => {
     setMenuOpen(false);
-    navigate("/dashboard");
+    navigate("/client-portal");
   };
 
   return (
