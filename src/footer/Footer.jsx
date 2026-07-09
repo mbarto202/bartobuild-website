@@ -5,7 +5,7 @@ import { RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id="footer">
       <a href="#" className="footerLogo">
         Michael Barto
       </a>

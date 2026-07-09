@@ -33,9 +33,9 @@ const Nav = () => {
         <TbFlame />
       </a>
       <a
-        href="#contact"
-        onClick={() => setActiveNav("#contact")}
-        className={activeNav === "#contact" ? "active" : ""}
+        href="#footer"
+        onClick={() => setActiveNav("#footer")}
+        className={activeNav === "#footer" ? "active" : ""}
       >
         <BiMessageDots />
       </a>
