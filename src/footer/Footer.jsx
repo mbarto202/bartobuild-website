@@ -20,10 +20,13 @@ const Footer = () => {
         <li>
           <a href="#services">Services</a>
         </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
       </ul>
+
+      <div className="footer-contact">
+        <a href="tel:3025551234">(302) 555-1234</a>
+
+        <a href="mailto:michael@bartobuild.com">michael@bartobuild.com</a>
+      </div>
 
       <div className="footerSocials">
         <a href="https://www.instagram.com/mbarto11/">
