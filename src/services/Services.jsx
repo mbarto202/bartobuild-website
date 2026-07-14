@@ -71,7 +71,9 @@ const Services = () => {
             schedule, and decide which option makes the most sense for you.
           </p>
           <button
-            onClick={() => openBookingLink("https://calendly.com/your-link")}
+            onClick={() =>
+              openBookingLink("https://calendly.com/michael-d-barto/30min")
+            }
             className="btn btn-primary consultation-button"
           >
             Book a Call
