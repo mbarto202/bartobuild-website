@@ -23,9 +23,8 @@ const Footer = () => {
       </ul>
 
       <div className="footer-contact">
-        <a href="tel:3025551234">(302) 555-1234</a>
-
-        <a href="mailto:michael@bartobuild.com">michael@bartobuild.com</a>
+        <p>(484) 844-1189</p>
+        <p>michael.d.barto@gmail.com</p>
       </div>
 
       <div className="footerSocials">

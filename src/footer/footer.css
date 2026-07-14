@@ -14,11 +14,11 @@ footer a {
 }
 
 footer a:hover {
-  color: #cc082c;
+  color: #050001;
 }
 
 .footerLogo {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   display: inline-block;
@@ -72,7 +72,7 @@ footer a:hover {
 .footerCopyright {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.6);
 }
