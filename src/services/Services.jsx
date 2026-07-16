@@ -60,7 +60,7 @@ const Services = () => {
             stay consistent and make progress.
           </p>
           <p className="service-price">$320 / month</p>
-          <span className="service-note">Includes 8 sessions per month</span>
+          <span className="service-note">Includes 8 sessions</span>
         </div>
 
         <div className="service-item">

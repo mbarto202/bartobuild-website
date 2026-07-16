@@ -3,6 +3,7 @@ import "./header.css";
 import HeaderSocial from "./HeaderSocials";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import HeaderLogo from "../assets/BBlogonobb.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,24 +16,32 @@ const Header = () => {
 
   return (
     <header>
-      <div className="auth-buttons">
+      <div className="top-bar">
+        <a href="#">
+          <img src={HeaderLogo} alt="BartoBuild" className="header-logo" />
+        </a>
+
         <div className="desktop-buttons">
           <button className="auth-btn" onClick={goToClientPortal}>
             Client Portal
           </button>
         </div>
-
-        <div className="hamburger" onClick={() => setMenuOpen((prev) => !prev)}>
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </div>
-
-        {menuOpen && (
-          <div className="mobile-menu">
-            <button className="auth-btn" onClick={goToClientPortal}>
-              Client Portal
-            </button>
+        <div className="auth-buttons">
+          <div
+            className="hamburger"
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
           </div>
-        )}
+
+          {menuOpen && (
+            <div className="mobile-menu">
+              <button className="auth-btn" onClick={goToClientPortal}>
+                Client Portal
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="container header_container">
@@ -49,7 +58,7 @@ const Header = () => {
           </a>
         </div>
         <HeaderSocial />
-        <a href="#contact" className="scroll_down">
+        <a href="#services" className="scroll_down">
           Scroll Down
         </a>
       </div>
