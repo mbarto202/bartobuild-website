@@ -1,6 +1,5 @@
 import React from "react";
 import "./footer.css";
-import { FaFacebookF } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
@@ -30,9 +29,6 @@ const Footer = () => {
       <div className="footerSocials">
         <a href="https://www.instagram.com/mbarto11/">
           <RiInstagramFill />
-        </a>
-        <a href="https://facebook.com">
-          <FaFacebookF />
         </a>
       </div>
 
