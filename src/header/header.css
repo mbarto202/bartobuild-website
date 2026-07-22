@@ -169,6 +169,12 @@ header {
   text-decoration: none;
 }
 
+.mobile-menu {
+  position: absolute;
+  right: -20px;
+  top: 20px;
+}
+
 @media screen and (max-width: 1024px) {
   header {
     height: 100vh;
@@ -210,6 +216,12 @@ header {
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
   }
+
+  .mobile-menu {
+    position: absolute;
+    right: -20px;
+    top: 20px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -232,5 +244,11 @@ header {
 
   .hamburger {
     display: block;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    right: -20px;
+    top: 20px;
   }
 }
