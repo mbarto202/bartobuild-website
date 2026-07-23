@@ -1,6 +1,6 @@
 # BartoBuild
 
-**BartoBuild** is a personal training and fitness coaching platform built for clients looking to transform their physique through guided programs and expert support. The project showcases a modern frontend, secure AWS-powered backend, and interactive contact flow.
+**BartoBuild** is a personal training and fitness coaching platform built for clients looking to transform their physique through guided programs and expert support. The project features a modern React frontend hosted on AWS and integrates with the shared backend powering my **TrackThree** application to provide secure client portal functionality.
 
 ## Live Site
 
@@ -11,12 +11,12 @@
 ## Features
 
 - Fully responsive React frontend
-- Animated UI elements with scroll effects
-- Firebase authentication with optional auto-fill for returning users
-- Contact form that:
-  - Submits data to an AWS Lambda function
-  - Stores entries in DynamoDB
-  - Sends messages via AWS SES
+- Animated UI elements
+- Personal training services and pricing
+- Calendly consultation booking
+- Client Portal
+- Mobile-friendly navigation
+- Cloud-hosted on AWS
 
 ---
 
@@ -26,19 +26,23 @@
 
 - React
 - React Router
-- Firebase Auth
-- CSS Modules
+- JavaScript
+- CSS
 
-### Backend (Serverless)
+### Backend
 
-- **AWS Lambda** – Handles contact form logic
-- **Amazon API Gateway** – Securely exposes Lambda function
-- **DynamoDB** – Stores contact submissions
-- **AWS SES (Simple Email Service)** – Sends email notifications
+BartoBuild integrates with the shared backend used by **TrackThree**.
+
+- Spring Boot
+- Java
+- REST APIs
+- AWS Lambda
+- Amazon API Gateway
 
 ### DevOps & Deployment
 
-- **S3 + CloudFront** – Static site hosting with CDN
-- **Route 53** – Domain management for [bartobuild.com](https://bartobuild.com)
+- **Amazon S3** – Static website hosting
+- **Amazon CloudFront** – Global content delivery network (CDN)
+- **Amazon Route 53** – Domain management and DNS
 
 ---
