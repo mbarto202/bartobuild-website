@@ -6,12 +6,18 @@ const ClientPortal = () => {
   const [clientCode, setClientCode] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Client Code:", clientCode);
+    const response = await fetch(
+      `${API_URL}/tracker/validate?clientCode=${clientCode}`,
+    );
 
-    alert("Client dashboard coming soon!");
+    if (response.ok) {
+      navigate("/dashboard");
+    } else {
+      setError("Invalid client code.");
+    }
   };
 
   return (
