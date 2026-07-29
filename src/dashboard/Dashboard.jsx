@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      setUser(authUser);
-    });
-    return () => unsubscribe();
-  }, []);
+  const clientCode = localStorage.getItem("clientCode");
 
   return (
     <div className="dashboard-container">
