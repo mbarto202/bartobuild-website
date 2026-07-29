@@ -65,3 +65,9 @@
 .back-button:hover {
   color: white;
 }
+
+.portal-error {
+  color: #ff4d4d;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}

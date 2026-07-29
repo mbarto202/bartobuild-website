@@ -5,19 +5,20 @@ import { useNavigate } from "react-router-dom";
 const ClientPortal = () => {
   const [clientCode, setClientCode] = useState("");
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const response = await fetch(
-      `${API_URL}/tracker/validate?clientCode=${clientCode}`,
-    );
+    setError("");
 
-    if (response.ok) {
-      navigate("/dashboard");
-    } else {
-      setError("Invalid client code.");
+    if (!clientCode.trim()) {
+      setError("Please enter your client code.");
+      return;
     }
+
+    // Temporary until TrackThree backend is connected
+    navigate("/dashboard");
   };
 
   return (
@@ -42,6 +43,8 @@ const ClientPortal = () => {
 
           <button type="submit">Continue</button>
         </form>
+
+        {error && <p className="portal-error">{error}</p>}
 
         <p className="portal-note">
           Client dashboard is currently under development. Please use the client
