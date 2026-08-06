@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import "./dashboard.css";
 
 const Dashboard = () => {
-  const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const clientCode = localStorage.getItem("clientCode");
 
