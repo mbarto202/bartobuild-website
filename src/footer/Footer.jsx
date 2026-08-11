@@ -5,13 +5,13 @@ import { RiInstagramFill } from "react-icons/ri";
 const Footer = () => {
   return (
     <footer id="footer">
-      <a href="#" className="footerLogo">
+      <a href="#home" className="footerLogo">
         Michael Barto
       </a>
 
       <ul className="permalinks">
         <li>
-          <a href="#">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li>
           <a href="#about">About</a>
