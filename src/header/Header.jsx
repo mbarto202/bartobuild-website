@@ -15,9 +15,9 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header id="home">
       <div className="top-bar">
-        <a href="#">
+        <a href="#home">
           <img src={HeaderLogo} alt="BartoBuild" className="header-logo" />
         </a>
 
