@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./ClientPortal.css";
 import { useNavigate } from "react-router-dom";
-import API_URL from "../config/api";
 
 const ClientPortal = () => {
   const [clientCode, setClientCode] = useState("");
