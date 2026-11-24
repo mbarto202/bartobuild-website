@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import "./dashboard.css";
 
 const Dashboard = () => {
-  const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const clientCode = localStorage.getItem("clientCode");
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      setUser(authUser);
-    });
-    return () => unsubscribe();
-  }, []);
+  if (!clientCode) {
+    return <Navigate to="/client-portal" replace />;
+  }
 
   return (
     <div className="dashboard-container">
@@ -22,11 +17,7 @@ const Dashboard = () => {
         </button>
       </div>
 
-      <h2 className="dashboard-title">
-        {user
-          ? `Welcome, ${user.displayName || "Athlete"}!`
-          : "Welcome to Your Dashboard"}
-      </h2>
+      <h2 className="dashboard-title">Welcome to Your Dashboard</h2>
 
       <div className="dashboard-section">
         <h3>📅 Upcoming Appointments</h3>

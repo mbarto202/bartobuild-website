@@ -5,13 +5,20 @@ import { useNavigate } from "react-router-dom";
 const ClientPortal = () => {
   const [clientCode, setClientCode] = useState("");
   const navigate = useNavigate();
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Client Code:", clientCode);
+    setError("");
 
-    alert("Client dashboard coming soon!");
+    if (!clientCode.trim()) {
+      setError("Please enter your client code.");
+      return;
+    }
+
+    // Temporary until TrackThree backend is connected
+    navigate("/dashboard");
   };
 
   return (
@@ -36,6 +43,8 @@ const ClientPortal = () => {
 
           <button type="submit">Continue</button>
         </form>
+
+        {error && <p className="portal-error">{error}</p>}
 
         <p className="portal-note">
           Client dashboard is currently under development. Please use the client
